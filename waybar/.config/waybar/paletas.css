@@ -1,0 +1,40 @@
+@define-color color-bg-main #1a1d23;
+/* fundo geral da barra */
+@define-color color-bg-module #22262e;
+/* fundo dos módulos */
+@define-color color-bg-accent #2a2f38;
+/* fundo de elementos destacados */
+@define-color color-border #5e81ac;
+/* cor das bordas frias discretas */
+@define-color color-fg-main #f0c674;
+/* texto padrão quente */
+@define-color color-fg-muted #d08770;
+/* texto secundário quente */
+
+@define-color color-accent #fab387;
+/* laranja queimado principal */
+@define-color color-alert #f85552;
+/* vermelho vivo p/ avisos */
+@define-color color-success #e5c07b;
+/* amarelo quente p/ status */
+@define-color color-warning #dca561;
+/* laranja âmbar p/ alertas */
+@define-color color-info #f78c6c;
+/* coral p/ info */
+@define-color color-contrast #ffbfa9;
+/* tom pêssego p/ destaques */
+
+@define-color color-battery #fab387;
+@define-color color-network #f78c6c;
+@define-color color-sound #e5c07b;
+@define-color color-microphone #dca561;
+@define-color color-clock #ffbfa9;
+@define-color color-date #fab387;
+
+@define-color color-fg-dim #b38b6d;
+/* texto mais suave quente */
+
+/*---*/
+
+@define-color color-item-background #2e2f37;
+@define-color color-item-text #d3d9e3;

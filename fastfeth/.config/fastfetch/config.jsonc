@@ -1,0 +1,178 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/ascii-art.txt",
+    "type": "auto",
+    "height": 15,
+    "width": 30,
+    "padding": {
+      "top": 2
+    }
+  },
+  "display": {
+    "separator": " | ",
+    "constants": [
+      "──────────────────────────────"
+    ]
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "keyWidth": 10
+    },
+    
+    {
+      "type": "custom",
+      "format": "╭{$1}{$1}",
+      "outputColor": "90"
+    },
+    {
+      "type": "os",
+      "key": "│ ╭OS",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wifi",
+      "key": "│ ├Wi-Fi",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "datetime",
+      "key": "│ ├Data/Hora",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "locale",
+      "key": "│ ├Local",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "users",
+      "key": "│ ├Usuários",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├Kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "shell",
+      "key": "│ ╰Shell",
+      "keyColor": "yellow"
+    },
+
+    {
+      "type": "host",
+      "key": "│ ╭PC",
+      "keyColor": "green"
+    },
+    {
+      "type": "bootmgr",
+      "key": "│ ├BootMgr",
+      "keyColor": "green"
+    },
+    {
+      "type": "uptime",
+      "key": "│ ├Uptime",
+      "keyColor": "green"
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├CPU",
+      "keyColor": "green",
+      "showPeCoreCount": true,
+      "temp": true
+    },
+    {
+      "type": "cpucache",
+      "key": "│ ├CPU Cache",
+      "keyColor": "green"
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├GPU",
+      "keyColor": "green",
+      "driverSpecific": true,
+      "temp": true
+    },
+    {
+      "type": "physicalmemory",
+      "key": "│ ├Memória",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "key": "│ ├Disco",
+      "keyColor": "green"
+    },
+    {
+      "type": "poweradapter",
+      "key": "│ ├Adaptador",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "player",
+      "key": "│ ├Player",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "media",
+      "key": "│ ├Mídia",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "battery",
+      "key": "│ ╰Bateria",
+      "keyColor": "green",
+      "temp": true
+    },
+
+    {
+      "type": "sound",
+      "key": "│ ╭SND",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "camera",
+      "key": "│ ├Câmera",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "bluetooth",
+      "key": "│ ├Bluetooth",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "bluetoothradio",
+      "key": "│ ├Bluetooth Rádio",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "mouse",
+      "key": "│ ├Mouse",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "keyboard",
+      "key": "│ ├Teclado",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "tpm",
+      "key": "│ ├TPM",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "version",
+      "key": "│ ╰Versão",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "custom",
+      "format": "╰{$1}{$1}",
+      "outputColor": "90"
+    }
+  ]
+}
