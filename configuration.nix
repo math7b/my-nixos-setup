@@ -119,8 +119,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     ### 🧠 Desenvolvimento e Ferramentas de Programação
     vim
     neovim
@@ -151,9 +151,8 @@
     colloid-gtk-theme
     colloid-kde
     colloid-icon-theme
-#    networkmanagerapplet
     ### 🌐 Navegadores e Comunicação
-    firefox
+    brave
     vivaldi
     discord
     zoom-us
@@ -174,8 +173,6 @@
     fastfetch
     starship
     asciiquarium-transparent
-#    imagemagick
-#    wofi-emoji
     emote
     wl-clipboard
     obs-studio
