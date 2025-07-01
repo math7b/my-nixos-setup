@@ -168,6 +168,7 @@
     killall
     nvtopPackages.full
     blueman
+    libsecret
     ### ⚙️ Ferramentas do Sistema (Qualidade de vida)
     btop
     fastfetch
@@ -188,6 +189,8 @@
     obsidian
     krita
   ];
+
+  services.gnome.gnome-keyring.enable = true;
 
   programs.steam = {
     enable = true;
