@@ -9,13 +9,8 @@
 }
 
 window#waybar {
-  background-color: transparent;
-}
-
-/* Modules */
-window#waybar>* {
-  background-color: transparent;
-  padding: 0px 10px;
+  background-color: @color-item-background;
+  border-radius: 8px;
 }
 
 #workspaces {
@@ -25,77 +20,53 @@ window#waybar>* {
   padding: 0px 2px
 }
 
-#workspaces button {
-  margin: -3px;
-}
-
 /* Workspaces ativos */
 #workspaces button.active {
   color: @color-accent;
-  border-radius: 0px;
-  border-top: 0.5px;
+  border-radius: 1px;
+  border-top: 1px;
   border-color: @color-accent;
   border-style: solid;
 }
 
 /* Som */
 #pulseaudio {
-  background-color: @color-item-background;
-  color: @color-info;
-  border-radius: 8px;
+  color: @color-item-text;
   padding: 0px 8px;
-  margin: 0px 2px;
 }
 
 /* Microfone */
 #pulseaudio#microphone {
-  background-color: @color-item-background;
-  color: @color-info;
-  border-radius: 8px;
+  color: @color-item-text;
+  padding: 0px 8px;
 }
 
 /* Bateria */
 #battery {
-  background-color: @color-item-background;
   color: @color-info;
-  border-radius: 8px;
   padding: 0px 8px;
-  margin: 0px 2px;
 }
 
 /* Custon ASCII */
 #custom-ascii {
-  background-color: @color-item-background;
   color: @color-item-text;
-  border-radius: 8px;
   padding: 0px 8px;
-  margin: 0px 2px;
 }
 
 /* Rede */
 #network {
-  background-color: @color-item-background;
   color: @color-info;
-  border-radius: 8px;
   padding: 0px 8px;
-  margin: 0px 2px;
-
-  /* color: @color-accent; */
 }
 
 /* Relógio */
 #clock {
-  background-color: @color-item-background;
   color: @color-item-text;
-  border-radius: 8px;
   padding: 0px 8px;
-  margin: 0px 2px;
 }
 
 /* Data */
 #clock-date {
-  background-color: @color-item-background;
-  border-radius: 8px;
+  color: @color-item-text;
   padding: 0px 8px;
-  margin: 0px 2px;
 }

@@ -1,5 +1,5 @@
 {
-  "margin": "4 0 0 0",
+  "margin": "4 4 0 4",
   "layer": "top",
   "position": "top",
   "mod": "dock",
@@ -7,22 +7,18 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 34,
-  // "modules-left": ["clock"],
   "modules-left": [
     "clock#date",
     "clock"
-//    "hyprland/workspaces",
   ],
   "modules-center": [],
   "modules-right": [
     "hyprland/workspaces",
-    "network",
     "custom/ascii",
-//    "cpu",
-//    "memory",
     "pulseaudio",
     "pulseaudio#microphone",
-    "battery"
+    "battery",
+    "network"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -150,4 +146,3 @@
     ]
   },
 }
-
