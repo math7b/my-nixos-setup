@@ -1,0 +1,49 @@
+/* ~/.config/wofi/style.css */
+/* Catppuccin Mocha theme for Wofi */
+
+* {
+    font-family: "CaskaydiaCove Nerd Font Mono", monospace;
+    font-size: 14px;
+    color: #CDD6F4;
+    border: none;
+    outline: none;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.9); /* matches kitty background_opacity */
+    border-radius: 16px;
+    padding: 16px;
+    background-image: url("/home/mathy/.config/backgrounds/black-hole.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#input {
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #B4BEFE; /* active_border_color */
+}
+
+#entry {
+    padding: 10px 16px;
+    margin: 4px 0;
+    border-radius: 12px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#entry:selected {
+    border: 1px solid #BAC2DE;
+}
+
+#text {
+    color: inherit;
+}
+
+#scroll {
+    margin: 0;
+    padding: 0;
+}
