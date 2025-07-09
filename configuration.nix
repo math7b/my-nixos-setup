@@ -179,6 +179,8 @@
     wl-clipboard
     obs-studio
     libreoffice
+    power-profiles-daemon
+    cliphist
     ### 🗂️ Gerenciadores de Arquivos
     nautilus
     nemo
@@ -191,16 +193,12 @@
     krita
   ];
 
-  services.gnome.gnome-keyring.enable = true;
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
-  systemd.tpm2.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -210,7 +208,11 @@
   #   enableSSHSupport = true;
   # };
 
+  systemd.tpm2.enable = false;
+
   # List services that you want to enable:
+  services.gnome.gnome-keyring.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
