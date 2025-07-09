@@ -141,12 +141,13 @@
     wayland
     kitty
     waybar
-    wofi
+    rofi
     hyprshot
     swaynotificationcenter
     hyprlock
     hypridle
     hyprpaper
+    hyprpicker
     nwg-look
     colloid-gtk-theme
     colloid-kde
