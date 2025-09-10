@@ -1,0 +1,9 @@
+mode=drun
+show=drun
+term=kitty
+width=300
+height=570
+allow_markup=true
+insensitive=true
+columns=1
+prompt=Search

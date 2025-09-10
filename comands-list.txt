@@ -1,6 +1,0 @@
-nix-channel --upgrade | to check if there's any update
-nixos-rebuild switch --upgrade | if there's any upgrade
-
-hostnamectl
-
-nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system
