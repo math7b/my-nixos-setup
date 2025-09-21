@@ -54,7 +54,7 @@ mainbox {
 
 // LEFT SIDE BACKGROUND PANEL
 #leftbox {
-  background-image: url("/home/mathy/.config/backgrounds/background", height);
+  background-image: url("/home/mathy/.config/backgrounds/36087879-anime-wallpaper-1269377572.jpg", height);
 }
 // RIGHT SIDE (INPUTBAR + LISTVIEW)
 #rightbox {

@@ -70,7 +70,6 @@
   #  wget
     ### 🧠 Desenvolvimento e Ferramentas de Programação
     vim
-    neovim
     vscode
     code-cursor
     git
@@ -106,6 +105,7 @@
     discord
     zoom-us
     tor
+    firefox
     ### 🎵 Áudio e Multimídia
     pavucontrol
     pamixer
@@ -140,6 +140,7 @@
     ### 📝 Produtividade
     obsidian
     krita
+    yt-dlp
   ];
 
   #-------

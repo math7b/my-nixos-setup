@@ -4,3 +4,19 @@ nixos-rebuild switch --upgrade | if there's any upgrade
 hostnamectl
 
 nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system
+
+chmod +x to mack a script
+
+hyprctl clients
+
+# -------
+# nvim
+C-n | to open
+C-p | to open file finder
+= | to ident in visual mode
+
+a | to create a file\folder
+x | to cut
+p | to past
+
+# -------

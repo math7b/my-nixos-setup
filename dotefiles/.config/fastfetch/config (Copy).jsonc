@@ -1,16 +1,14 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/ascii-art.txt",
+    "source": "/home/mathy/.config/fastfetch/ascii-art.txt",
     "type": "auto",
-    "height": 15,
-    "width": 30,
+    "width": 28,
     "padding": {
       "top": 2
-    }
+    },
   },
   "display": {
-    "separator": " -> ",
+    "separator": " | ",
     "constants": [
       "──────────────────────────────"
     ]
@@ -21,6 +19,7 @@
       "type": "title",
       "keyWidth": 10
     },
+    
     {
       "type": "custom",
       "format": "╭{$1}{$1}",
@@ -28,17 +27,17 @@
     },
     {
       "type": "os",
-      "key": "├OS",
+      "key": "│ ╭OS",
       "keyColor": "yellow"
     },
     {
       "type": "wifi",
-      "key": "├Wi-Fi",
+      "key": "│ ├Wi-Fi",
       "keyColor": "yellow"
     },
     {
       "type": "datetime",
-      "key": "├Data/Hora",
+      "key": "│ ├Data/Hora",
       "keyColor": "yellow"
     },
     {
@@ -58,13 +57,13 @@
     },
     {
       "type": "shell",
-      "key": "│ └Shell",
+      "key": "│ ╰Shell",
       "keyColor": "yellow"
     },
 
     {
       "type": "host",
-      "key": "PC",
+      "key": "│ ╭PC",
       "keyColor": "green"
     },
     {
@@ -107,15 +106,9 @@
       "keyColor": "green"
     },
     {
-      "type": "battery",
-      "key": "│ └Bateria",
-      "keyColor": "green",
-      "temp": true
-    },
-    {
       "type": "poweradapter",
       "key": "│ ├Adaptador",
-      "keyColor": "green"
+      "keyColor": "cyan"
     },
     {
       "type": "player",
@@ -124,12 +117,19 @@
     },
     {
       "type": "media",
-      "key": "│ └Mídia",
+      "key": "│ ├Mídia",
       "keyColor": "cyan"
     },
     {
-      "type": "SND",
-      "key": "SND",
+      "type": "battery",
+      "key": "│ ╰Bateria",
+      "keyColor": "green",
+      "temp": true
+    },
+
+    {
+      "type": "sound",
+      "key": "│ ╭SND",
       "keyColor": "cyan"
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "type": "version",
-      "key": "│ └Versão",
+      "key": "│ ╰Versão",
       "keyColor": "cyan"
     },
     {

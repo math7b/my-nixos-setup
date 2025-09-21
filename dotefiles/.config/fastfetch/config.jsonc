@@ -1,13 +1,11 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/ascii-art.txt",
-    "type": "auto",
-    "height": 15,
-    "width": 30,
+    "source": "/home/mathy/.config/fastfetch/ascii-art.txt",
+      "type": "auto",
+    "width": 23,
     "padding": {
-      "top": 2
-    }
+      "top": 1
+    },
   },
   "display": {
     "separator": " | ",
@@ -15,7 +13,7 @@
       "──────────────────────────────"
     ]
   },
-  "modules": [
+  "modules": [    
     "break",
     {
       "type": "title",
@@ -43,16 +41,6 @@
       "keyColor": "yellow"
     },
     {
-      "type": "locale",
-      "key": "│ ├Local",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "users",
-      "key": "│ ├Usuários",
-      "keyColor": "yellow"
-    },
-    {
       "type": "kernel",
       "key": "│ ├Kernel",
       "keyColor": "yellow"
@@ -68,41 +56,7 @@
       "key": "│ ╭PC",
       "keyColor": "green"
     },
-    {
-      "type": "bootmgr",
-      "key": "│ ├BootMgr",
-      "keyColor": "green"
-    },
-    {
-      "type": "uptime",
-      "key": "│ ├Uptime",
-      "keyColor": "green"
-    },
-    {
-      "type": "cpu",
-      "key": "│ ├CPU",
-      "keyColor": "green",
-      "showPeCoreCount": true,
-      "temp": true
-    },
-    {
-      "type": "cpucache",
-      "key": "│ ├CPU Cache",
-      "keyColor": "green"
-    },
-    {
-      "type": "gpu",
-      "key": "│ ├GPU",
-      "keyColor": "green",
-      "driverSpecific": true,
-      "temp": true
-    },
-    {
-      "type": "physicalmemory",
-      "key": "│ ├Memória",
-      "keyColor": "green"
-    },
-    {
+   {
       "type": "disk",
       "key": "│ ├Disco",
       "keyColor": "green"
@@ -112,17 +66,7 @@
       "key": "│ ├Adaptador",
       "keyColor": "cyan"
     },
-    {
-      "type": "player",
-      "key": "│ ├Player",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "media",
-      "key": "│ ├Mídia",
-      "keyColor": "cyan"
-    },
-    {
+   {
       "type": "battery",
       "key": "│ ╰Bateria",
       "keyColor": "green",
@@ -149,17 +93,7 @@
       "key": "│ ├Bluetooth Rádio",
       "keyColor": "cyan"
     },
-    {
-      "type": "mouse",
-      "key": "│ ├Mouse",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "keyboard",
-      "key": "│ ├Teclado",
-      "keyColor": "cyan"
-    },
-    {
+   {
       "type": "tpm",
       "key": "│ ├TPM",
       "keyColor": "cyan"
