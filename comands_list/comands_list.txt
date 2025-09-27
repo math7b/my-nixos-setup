@@ -20,3 +20,11 @@ x | to cut
 p | to past
 
 # -------
+
+git config --global credential.helper manager-core | 👇️
+A comand ussed to mack git uses it on credential manager
+I was having problems to loging my git accound because
+the gnome-keyring was not working well with gh ┻━┻︵└(՞▽՞ └)
+
+:%s/\%u2060//g | a nvim comand to clean the emoticons <2060> stufs
+
