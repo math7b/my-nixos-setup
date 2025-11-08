@@ -1,0 +1,5 @@
+button in waybar to turn on/off camera
+fix fonts
+build development tools
+switch the terminal to one faster, maybe fish? the terminal booter is slow
+learn more about grep
