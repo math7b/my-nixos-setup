@@ -1,11 +1,9 @@
 {
   "logo": {
-    "source": "/home/mathy/.config/fastfetch/ascii-art.txt",
-      "type": "auto",
-    "width": 23,
+    "width": 20,
     "padding": {
       "top": 1
-    },
+    }
   },
   "display": {
     "separator": " | ",
