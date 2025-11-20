@@ -31,8 +31,6 @@ PACKAGES=(
     hyprpicker
     nwg-look
     dolphin
-    dunst
-    grim
     ### 🌐 Navegadores e Comunicação
     vivaldi
     discord
@@ -45,7 +43,9 @@ PACKAGES=(
     sbctl
     brightnessctl
     nvtop
-    xdg-desktop-portal
+    dunst
+    grim
+    polkit-kde-agent
     qt5-wayland
     qt6-wayland
     slurp
