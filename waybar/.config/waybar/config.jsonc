@@ -12,6 +12,7 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
+  "bluetooth"
   ],
   "modules-right": [
     "clock",
@@ -25,6 +26,12 @@
   },
   "clock": {
     "format": "{:%a, %b %d, %Y - %H:%M}"
+  },
+  "bluetooth": {
+    "format": "{icon}",
+    "format-connected": "󰂯",
+    "format-disabled": "󰂲",
+    "on-click": "blueman-manager"
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -63,7 +70,7 @@
     "format-disconnected": "⚠ dis"
   },
   "custom/ascii": {
-    "format": "",
+    "format": "",
     "on-click": "~/.config/waybar/scripts/ascii_emote_picker.sh",
     "tooltip": "pick ASCII emote"
   },
@@ -108,16 +115,16 @@
 //    "format-warning": "{icon} {capacity}%",
 //    "format-critical": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-plugged": " {capacity}%",
 //    "format-alt": "{icon} {capacity}%",
-    "format-full": " 100%",
+    "format-full": " 100%",
     "format-icons": [
 //      "",  // General battery icon
       "",  // Empty battery
       "",  // 25% battery
       "",  // 50% battery
       "",  // 75% battery
-      ""  // Full battery
+      ""  // Full battery
 //      "⚡",  // Charging icon
 //      "",  // Plugged-in icon
 //      ""   // Full battery (again for 100% capacity)

@@ -11,6 +11,6 @@ alias lsa='ls --all'
 
 alias arise='uwsm start hyprland'
 
-alias dfas='fastfetch --kitty-icat ~/.config/fastfetch/nyarch.png'
+alias dfas='clear; fastfetch --kitty-icat ~/.config/fastfetch/nyarch.png'
 
 dfas
