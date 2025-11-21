@@ -20,7 +20,6 @@ window#waybar {
   padding: 0px 2px
 }
 
-/* Workspaces ativos */
 #workspaces button.active {
   color: @color-accent;
   border-top: 1px;
@@ -37,44 +36,38 @@ window#waybar {
   color: @color-item-text;
 }
 
-/* Som */
 #pulseaudio {
   color: @color-item-text;
   padding: 0px 8px;
 }
 
-/* Microfone */
 #pulseaudio#microphone {
   color: @color-item-text;
   padding: 0px 8px;
 }
 
-/* Bateria */
 #battery {
   color: @color-info;
   padding: 0px 8px;
+  font-size: 13px;
 }
 
-/* Custon ASCII */
 #custom-ascii {
   color: @color-item-text;
   padding: 0px 8px;
-  font-size: 17px;
+  font-size: 18px;
 }
 
-/* Rede */
 #network {
   color: @color-info;
   padding: 0px 8px;
 }
 
-/* Relógio */
 #clock {
   color: @color-item-text;
   padding: 0px 8px;
 }
 
-/* Data */
 #clock-date {
   color: @color-item-text;
   padding: 0px 8px;

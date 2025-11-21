@@ -8,14 +8,13 @@
   "gtk-layer-shell": true,
   "height": 34,
   "modules-left": [
-    "clock#date",
-    "clock"
+    "custom/ascii",
+    "hyprland/workspaces"
   ],
   "modules-center": [
   ],
   "modules-right": [
-    "hyprland/workspaces",
-    "custom/ascii",
+    "clock",
     "pulseaudio",
     "pulseaudio#microphone",
     "battery",
@@ -24,11 +23,8 @@
   "hyprland/window": {
     "format": "{}"
   },
-  "clock#date": {
-    "format": "  {:%A, %B %d}"
-  },
   "clock": {
-    "format": "  {:%H:%M}"
+    "format": "{:%a, %b %d, %Y - %H:%M}"
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -63,31 +59,13 @@
     }
   },
   "network": {
-    "format-wifi": "   {signalStrength}%",
+    "format-wifi": "  {signalStrength}%",
     "format-disconnected": "⚠ dis"
   },
   "custom/ascii": {
-    "format": " ",
+    "format": "",
     "on-click": "~/.config/waybar/scripts/ascii_emote_picker.sh",
     "tooltip": "pick ASCII emote"
-  },
-  "cpu": {
-    "interval": 1,
-    "format": "  {usage}%", // Icon: microchip
-    "states": {
-      "warning": 70,
-      "critical": 90
-    },
-    "on-click": "swaymsg exec \"\\$term_float_landscape \\$cpu_mon\""
-  },
-  "memory": {
-    "interval": 1,
-    "format": " {}%", // Nerd Font memory icon
-    "states": {
-      "warning": 70,
-      "critical": 90
-    },
-    "on-click": "swaymsg exec \"\\$term_float_landscape \\$mem_mon\""
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -108,7 +86,7 @@
         ""
       ]
     },
-    "on-click": "pamixer -t",
+    "on-click": "pamixer -t"
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
@@ -127,23 +105,22 @@
       "critical": 20
     },
     "format": "{icon} {capacity}%",
-    "format-warning": "{icon} {capacity}%",
-    "format-critical": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon} {capacity}%",
-    "format-full": "  100%",
+//    "format-warning": "{icon} {capacity}%",
+//    "format-critical": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+//    "format-alt": "{icon} {capacity}%",
+    "format-full": " 100%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+//      "",  // General battery icon
+      "",  // Empty battery
+      "",  // 25% battery
+      "",  // 50% battery
+      "",  // 75% battery
+      ""  // Full battery
+//      "⚡",  // Charging icon
+//      "",  // Plugged-in icon
+//      ""   // Full battery (again for 100% capacity)
     ]
-  },
+  }
 }

@@ -88,7 +88,7 @@ echo
 if ask "Do you want to stow the .config before downloading the packages?"; then
     sudo pacman -S stow --needed
     cd ~/my-nixos-setup
-    stow --adopt backgrounds bashrc fastfetch files hypr kitty rofi starship waybar wofi
+    stow backgrounds bashrc fastfetch files hypr kitty rofi starship waybar wofi
     cd ~/
 else
     echo "Skipping stow."
