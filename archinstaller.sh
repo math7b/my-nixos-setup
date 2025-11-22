@@ -74,15 +74,16 @@ PACKAGES=(
   bluez
   bluez-utils
   ### Fonts
+  nerd-fonts
   JetBrainsMono
   FiraCode
   ttf-noto-nerd
   noto-fonts-emoji
   ttf-nerd-fonts-symbols
   ttf-jetbrains-mono-nerd
-  #    ttf-iosevka-nerd
-  #    noto-fonts
-  #    ttf-dejavu
+  ttf-iosevka-nerd
+  noto-fonts
+  ttf-dejavu
   ### 🧠 Desenvolvimento e Ferramentas de Programação
   vim
   neovim
@@ -91,6 +92,8 @@ PACKAGES=(
   lazydocker
   dockeri
   libreoffice-still
+  docker
+  docker-compose
   ### 💻 Ambiente de Desktop / Sistema Gráfico
   kitty
   rofi
@@ -131,14 +134,14 @@ PACKAGES=(
   ### 📝 Produtividade
   krita
   yt-dlp
+  ### For AppImage
+  fuse2
 )
 
 if ask "Do you want to install the packages?"; then
   echo
-  echo
   echo "Installing packages..."
   for pkg in "${PACKAGES[@]}"; do
-    echo
     echo
     echo "Installing: $pkg"
     sudo pacman -S --needed "$pkg" || true
@@ -151,14 +154,14 @@ fi
 echo
 echo
 
-if ask "Do ou want to check some systemctl services?"; then
+if ask "Do you want to check some systemctl services?"; then
   services=(
     bluetooth
     NetworkManager
   )
+  echo
   for svc in "${services[@]}"; do
     if systemctl is-active --quiet "$svc"; then
-      echo
       echo "$svc is running."
     else
       if ask "$svc is not running, do you want to enable it?"; then
@@ -178,20 +181,45 @@ echo
 echo
 
 if ask "Do you want to install the programs from web?"; then
-  echo
-  echo "Opening page to download zoom"
-  xdg-open "https://zoom.us/download?os=linux"
-  echo
-  echo "Press enter to go on."
-  read
-  echo
-  echo "Download the file in /Download."
-  echo
-  echo "The pacman will download zoom_x86_64.pkg.tar.xz if it's there."
-  sudo pacman -U --needed ~/Downloads/zoom_x86_64.pkg.tar.xz
+  urls=(
+    "https://zoom.us/download?os=linux"
+    "https://nodejs.org/en/download"
+    "https://www.winboat.app"
+  )
+  for url in "${urls[@]}"; do
+    echo
+    if ask "$url Open?";  then
+      echo
+      echo "Openning page to download"
+      xdg-open "$url"
+      read
+      echo 
+      echo "Next."
+    else
+      echo "Skipping"
+    fi
+  done
+  #sudo pacman -U --needed ~/Downloads/zoom_x86_64.pkg.tar.xz
 else
-  echo "Sckipping web packages instalation."
+  echo "Skipping web programs instalation."
 fi
+
+echo
+echo
+
+echo "installing WinBoat"
+./
+echo "installing docker and docker-compose"
+sudo pacman -S docker docker-compose
+#echo "Adding user to docker group"
+#sudo usermod -aG docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo pacman -S freerdp
+
+
+
 
 echo
 echo

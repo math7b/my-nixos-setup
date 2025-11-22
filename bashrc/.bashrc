@@ -3,7 +3,7 @@
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
-alias fzfpreview='fzf --style full --preview="bat {}"'
+alias fzf='fzf --style full --preview="bat {}"'
 alias nvf='selected=$(fzf --style full --preview="bat {}") && [ -n "$selected" ] && nvim "$selected"'
 alias snvf='selected=$(fzf --style full --preview="bat {}") && [ -n "$selected" ] && sudo nvim "$selected"'
 
@@ -14,3 +14,5 @@ alias arise='uwsm start hyprland'
 alias dfas='clear; fastfetch --kitty-icat ~/.config/fastfetch/nyarch.png'
 
 dfas
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
