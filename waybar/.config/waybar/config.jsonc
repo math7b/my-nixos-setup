@@ -1,21 +1,20 @@
 {
-  "margin": "4 4 -4 4",
+  "margin": "-4 4 4 4",
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "mod": "dock",
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 34,
   "modules-left": [
-    "custom/ascii",
-    "hyprland/workspaces"
+    "clock",
   ],
   "modules-center": [
-  "bluetooth"
   ],
   "modules-right": [
-    "clock",
+    "hyprland/workspaces",
+    "custom/ascii",
     "pulseaudio",
     "pulseaudio#microphone",
     "battery",

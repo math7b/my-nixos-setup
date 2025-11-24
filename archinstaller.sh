@@ -94,6 +94,7 @@ PACKAGES=(
   libreoffice-still
   docker
   docker-compose
+  code:
   ### 💻 Ambiente de Desktop / Sistema Gráfico
   kitty
   rofi
@@ -185,16 +186,14 @@ if ask "Do you want to install the programs from web?"; then
     "https://zoom.us/download?os=linux"
     "https://nodejs.org/en/download"
     "https://www.winboat.app"
-  )
+ )
   for url in "${urls[@]}"; do
     echo
     if ask "$url Open?";  then
-      echo
-      echo "Openning page to download"
       xdg-open "$url"
-      read
       echo 
-      echo "Next."
+      echo "Next?"
+      read
     else
       echo "Skipping"
     fi
@@ -205,6 +204,43 @@ else
 fi
 
 echo
+echo
+
+if ask "Install flatpak?"; then
+  sudo pacman -S flatpak --needed
+  echo "flatpak need a reboot"
+  if ask "Reboot now?"; then
+    reboot
+  else
+    echo "Reboot later..."  
+  fi 
+else
+  echo "Skipping"
+fi
+
+echo
+echo
+
+if ask "Install flathub programs?"; then
+  flathub=(
+    flatpak install flathub app.zen_browser.zen
+    flatpak install flathub com.play0ad.zeroad
+    flatpak install flathub org.diasurgical.DevilutionX
+  )
+
+  for flat in "${flathub[@]}"; do
+    echo
+    if ask "$flat install?"; then
+      sudo "$flat"
+    else
+      echo "Skipping"
+    fi
+  done
+else
+  echo "Skipping flathub programs"
+fi
+
+echo 
 echo
 
 echo "installing WinBoat"
