@@ -15,6 +15,34 @@ ask() {
   done
 }
 
+echo
+echo
+
+if ask "Do you want to install the programs from web?"; then
+  urls=(
+    "https://zoom.us/download?os=linux"
+    "https://nodejs.org/en/download"
+    "https://www.winboat.app"
+ )
+  for url in "${urls[@]}"; do
+    echo
+    if ask "$url Open?";  then
+      xdg-open "$url"
+      echo 
+      echo "Next?"
+      read
+    else
+      echo "Skipping"
+    fi
+  done
+  #sudo pacman -U --needed ~/Downloads/zoom_x86_64.pkg.tar.xz
+else
+  echo "Skipping web programs instalation."
+fi
+
+echo
+echo
+
 echo "The code will ask for sudo privilege to rum pacman."
 echo
 if ask "Do you want to update the system package database?"; then
@@ -181,28 +209,6 @@ fi
 echo
 echo
 
-if ask "Do you want to install the programs from web?"; then
-  urls=(
-    "https://zoom.us/download?os=linux"
-    "https://nodejs.org/en/download"
-    "https://www.winboat.app"
- )
-  for url in "${urls[@]}"; do
-    echo
-    if ask "$url Open?";  then
-      xdg-open "$url"
-      echo 
-      echo "Next?"
-      read
-    else
-      echo "Skipping"
-    fi
-  done
-  #sudo pacman -U --needed ~/Downloads/zoom_x86_64.pkg.tar.xz
-else
-  echo "Skipping web programs instalation."
-fi
-
 echo
 echo
 
@@ -223,15 +229,15 @@ echo
 
 if ask "Install flathub programs?"; then
   flathub=(
-    flatpak install flathub app.zen_browser.zen
-    flatpak install flathub com.play0ad.zeroad
-    flatpak install flathub org.diasurgical.DevilutionX
+    "flatpak install flathub app.zen_browser.zen"
+    "flatpak install flathub com.play0ad.zeroad"
+    "flatpak install flathub org.diasurgical.DevilutionX"
   )
 
   for flat in "${flathub[@]}"; do
     echo
     if ask "$flat install?"; then
-      sudo "$flat"
+      $flat
     else
       echo "Skipping"
     fi
