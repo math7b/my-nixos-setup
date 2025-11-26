@@ -3,6 +3,8 @@
 # exit on error
 set -e
 
+echo "The code will ask for sudo privilege to rum pacman."
+
 ask() {
   while true; do
     read -rp "$1 (y/n): " yn
@@ -18,55 +20,43 @@ ask() {
 echo
 echo
 
-if ask "Do you want to install the programs from web?"; then
+if ask "Install web programs?"; then
   urls=(
     "https://zoom.us/download?os=linux"
     "https://nodejs.org/en/download"
     "https://www.winboat.app"
- )
+  )
   for url in "${urls[@]}"; do
-    echo
-    if ask "$url Open?";  then
-      xdg-open "$url"
-      echo 
-      echo "Next?"
+    if ask "$url - Open?";  then
+      xdg-open "$url" 
+      echo "Press ENTER for next"
       read
-    else
-      echo "Skipping"
     fi
   done
   #sudo pacman -U --needed ~/Downloads/zoom_x86_64.pkg.tar.xz
-else
-  echo "Skipping web programs instalation."
 fi
 
 echo
 echo
 
-echo "The code will ask for sudo privilege to rum pacman."
-echo
-if ask "Do you want to update the system package database?"; then
+if ask "Update the system package database?"; then
   sudo pacman -Syu --needed
-else
-  echo "Skipping system update."
 fi
 
 echo
 echo
 
-if ask "Do you want to stow the .config before downloading the packages?"; then
+if ask "Stow the .config before downloading the packages?"; then
   sudo pacman -S stow --needed
   cd ~/my-nixos-setup
   stow backgrounds bashrc fastfetch files hypr kitty rofi starship waybar wofi
   cd ~/
-else
-  echo "Skipping stow."
 fi
 
 echo
 echo
 
-if ask "Do you want to clone the fork of typrcraft's dotfile to import neovim and tmux .config?"; then
+if ask "Clone the typrcraft's dotfile?"; then
   if [ -d "$HOME/dotfiles/" ]; then
     echo "Repository already exists. Pulling updates..."
     git -C $HOME/dotfiles pull
@@ -77,12 +67,7 @@ if ask "Do you want to clone the fork of typrcraft's dotfile to import neovim an
   cd ~/dotfiles
   stow nvim tmux
   cd ~/
-else
-  echo "Skipping stow from typecraft."
 fi
-
-echo
-echo
 
 PACKAGES=(
   ### 🛠️ Componentes Essenciais do Sistema
@@ -122,7 +107,7 @@ PACKAGES=(
   libreoffice-still
   docker
   docker-compose
-  code:
+  code
   ### 💻 Ambiente de Desktop / Sistema Gráfico
   kitty
   rofi
@@ -167,83 +152,59 @@ PACKAGES=(
   fuse2
 )
 
-if ask "Do you want to install the packages?"; then
-  echo
+if ask "Install the packages?"; then
   echo "Installing packages..."
   for pkg in "${PACKAGES[@]}"; do
-    echo
     echo "Installing: $pkg"
     sudo pacman -S --needed "$pkg" || true
     # --needed dosen't reinstall a package if it's alredy installed
   done
-else
-  echo "Skipping packages instalation."
 fi
 
 echo
 echo
 
-if ask "Do you want to check some systemctl services?"; then
-  services=(
-    bluetooth
-    NetworkManager
-  )
-  echo
+services=(
+  bluetooth
+  NetworkManager
+)
+
+if ask "Check some systemctl services?"; then
   for svc in "${services[@]}"; do
     if systemctl is-active --quiet "$svc"; then
       echo "$svc is running."
-    else
       if ask "$svc is not running, do you want to enable it?"; then
-        echo
         echo " Starting $svc"
         sudo systemctl enable --now "$svc"
-      else
-        echo "Skipping $svg service."
       fi
     fi
   done
-else
-  echo "Skipping services check."
 fi
 
 echo
 echo
 
-echo
-echo
+flathub=(
+  "flatpak install flathub app.zen_browser.zen"
+  "flatpak install flathub com.play0ad.zeroad"
+  "flatpak install flathub org.diasurgical.DevilutionX"
+)
 
-if ask "Install flatpak?"; then
-  sudo pacman -S flatpak --needed
-  echo "flatpak need a reboot"
-  if ask "Reboot now?"; then
-    reboot
-  else
-    echo "Reboot later..."  
-  fi 
-else
-  echo "Skipping"
-fi
-
-echo
-echo
-
-if ask "Install flathub programs?"; then
-  flathub=(
-    "flatpak install flathub app.zen_browser.zen"
-    "flatpak install flathub com.play0ad.zeroad"
-    "flatpak install flathub org.diasurgical.DevilutionX"
-  )
-
-  for flat in "${flathub[@]}"; do
-    echo
-    if ask "$flat install?"; then
-      $flat
-    else
-      echo "Skipping"
+if ask "Install flatpac stuffs?"; then
+  if ask "Install flatpak?"; then
+    sudo pacman -S flatpak --needed
+    echo "flatpak need a reboot"
+    if ask "Reboot now?"; then
+      reboot
     fi
-  done
-else
-  echo "Skipping flathub programs"
+  fi
+  if ask "Install flathub programs?"; then
+    for flat in "${flathub[@]}"; do
+      if ask "Install - $flat?"; then
+        $flat
+      fi
+    done
+  fi
 fi
 
 echo 
