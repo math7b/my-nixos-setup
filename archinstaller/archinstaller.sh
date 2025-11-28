@@ -123,6 +123,7 @@ PACKAGES=(
   ttf-iosevka-nerd
   noto-fonts
   ttf-dejavu
+  zenity
   vim # 🧠 Desenvolvimento e Ferramentas de Programação
   neovim
   git
