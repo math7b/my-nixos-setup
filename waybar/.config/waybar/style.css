@@ -13,6 +13,17 @@ window#waybar {
   border-radius: 4px;
 }
 
+#custom-webcam.on {
+  color: @color-item-text;
+  padding: 0 7px;
+  font-size: 14px;
+}
+#custom-webcam.off {
+  color: @color-item-text;
+  padding: 0 7px;
+  font-size: 14px;
+}
+
 #workspaces {
   margin: 0px 2px;
   border-color: @color-accent;

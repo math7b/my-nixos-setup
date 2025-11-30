@@ -14,8 +14,8 @@
   ],
   "modules-right": [
     "hyprland/workspaces",
-    "custom/ascii",
     "custom/webcam",
+    "custom/ascii",
     "pulseaudio",
     "pulseaudio#microphone",
     "battery",
@@ -27,13 +27,15 @@
   "clock": {
     "format": "{:%a, %b %d, %Y - %H:%M}"
   },
-  "custom/webcam": {
-    "exec": "~/.config/waybar/scripts/webcam_service_toggle.sh",
-    "on-click": "~/.config/waybar/scripts/webcam_service_toggle.sh toggle",
-    "interval": 3,
-    "format": "{}"
-  },
-  "bluetooth": {
+"custom/webcam": {
+    "exec": "~/.config/waybar/scripts/webcam-status.sh",
+    "interval": 2,
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "~/.config/waybar/scripts/webcam-zenity-toggle.sh",
+    "tooltip": "Toggle Webcam"
+},
+"bluetooth": {
     "format": "{icon}",
     "format-connected": "󰂯",
     "format-disabled": "󰂲",
