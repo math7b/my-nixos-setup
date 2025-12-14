@@ -27,15 +27,15 @@
   "clock": {
     "format": "{:%a, %b %d, %Y - %H:%M}"
   },
-"custom/webcam": {
+  "custom/webcam": {
     "exec": "~/.config/waybar/scripts/webcam-status.sh",
     "interval": 2,
     "return-type": "json",
     "format": "{}",
     "on-click": "~/.config/waybar/scripts/webcam-zenity-toggle.sh",
     "tooltip": "Toggle Webcam"
-},
-"bluetooth": {
+  },
+  "bluetooth": {
     "format": "{icon}",
     "format-connected": "󰂯",
     "format-disabled": "󰂲",
@@ -108,6 +108,7 @@
     "format-source": " {volume}%",
     "format-source-muted": "   mut",
     "on-click": "pamixer --default-source -t",
+//      ""   // Full battery (again for 100% capacity)
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5
@@ -120,22 +121,16 @@
       "critical": 20
     },
     "format": "{icon} {capacity}%",
-//    "format-warning": "{icon} {capacity}%",
-//    "format-critical": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-//    "format-alt": "{icon} {capacity}%",
-    "format-full": " 100%",
+    "format-full": " 100%",
     "format-icons": [
-//      "",  // General battery icon
-      "",  // Empty battery
-      "",  // 25% battery
-      "",  // 50% battery
-      "",  // 75% battery
-      ""  // Full battery
-//      "⚡",  // Charging icon
-//      "",  // Plugged-in icon
-//      ""   // Full battery (again for 100% capacity)
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   }
 }
+

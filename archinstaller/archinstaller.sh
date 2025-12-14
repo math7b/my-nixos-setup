@@ -173,6 +173,7 @@ if ask "Install flatpac stuffs?"; then
     #After this comand it worked even if reseting the configs in flatseal
     #flatpak override --user --filesystem=xdg-download app.zen_browser.zen
     "flatpak install flathub it.mijorus.smile"
+    "flatpak install flathub com.heroicgameslauncher.hgl"
   )
   if ! flatpak --version >/dev/null 2>&1; then
     if ask "Install flatpak?"; then
@@ -219,16 +220,23 @@ if ls /WinBoat*.AppImage >/dev/null 2>&1; then
 fi
 if ask "Proceed with graphical interface setup?"; then
   if ask "Install web programs?"; then
-      urls=(
-          "https://zoom.us/download?os=linux"
-          "https://nodejs.org/en/download"
-      )
-      for url in "${urls[@]}"; do
-          if ask "Open $url?"; then
-              xdg-open "$url" &
-              read -rp "Press ENTER to continue"
-          fi
-      done
+    urls=(
+        "https://zoom.us/download?os=linux"
+        "https://nodejs.org/en/download"
+    )
+    for url in "${urls[@]}"; do
+        if ask "Open $url?"; then
+            xdg-open "$url" &
+            read -rp "Press ENTER to continue"
+        fi
+    done
+    if [ -f ~/Downloads/zoom_x86_64.pkg.tar.xz ]; then
+      if ask  "Install Zoom?"; then
+          sudo pacman -U ~/Downloads/zoom_x86_64.pkg.tar.xz
+      fi
+    else
+      echo "Zoom package not found in Downloads."
+    fi
   fi
   if ask "Install WinBoat dependencies?"; then
       echo "Opening WinBoat website"

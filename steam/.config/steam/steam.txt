@@ -1,0 +1,6 @@
+STEAM_USE_WAYLAND=0 \
+CEF_ENABLE_CPU_RASTER=1 \
+steam --disable-gpu --in-process-gpu
+
+CEF_ENABLE_CPU_RASTER=1
+
