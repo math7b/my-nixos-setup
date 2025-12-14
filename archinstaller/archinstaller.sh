@@ -38,7 +38,7 @@ if ask "Stow some .config folders?"; then
       echo "Repository not found. Cloning..."
       git clone https://github.com/math7b/my-nixos-setup.git
     fi
-    stow backgrounds archinstaller bashrc fastfetch files hypr kitty rofi starship waybar wofi
+    stow backgrounds archinstaller bashrc fastfetch files hypr kitty rofi starship waybar wofi steam commands-list todo-list
     cd ~/
   fi
   if ask "Clone the typrcraft's dotfile?"; then
