@@ -30,26 +30,30 @@ echo
 if ask "Stow some .config folders?"; then
   sudo pacman -S stow --needed
   if ask "Clone the math7b's dotfile?"; then
-    cd ~/my-nixos-setup
-    if [ -d "$HOME/my-nixos-setup/" ]; then
+    if [ -d "$HOME/my-linux-setup/" ]; then
+	    cd ~/my-linux-setup
       echo "Repository already exists. Pulling updates..."
       git pull
+      cd ~/
     else
       echo "Repository not found. Cloning..."
-      git clone https://github.com/math7b/my-nixos-setup.git
+      git clone https://github.com/math7b/my-linux-setup.git
     fi
-    stow backgrounds archinstaller bashrc fastfetch files hypr kitty rofi starship waybar wofi steam commands-list todo-list
+    cd ~/my-linux-setup
+    stow backgrounds archinstaller bashrc fastfetch hypr kitty rofi starship waybar wofi commands-list todo-list
     cd ~/
   fi
   if ask "Clone the typrcraft's dotfile?"; then
-    cd ~/dotfiles
     if [ -d "$HOME/dotfiles/" ]; then
+    cd ~/dotfiles
       echo "Repository already exists. Pulling updates..."
       git pull
+    cd ~/
     else
       echo "Repository not found. Cloning..."
       git clone https://github.com/math7b/dotfiles.git
     fi
+    cd ~/dotfiles
     stow nvim tmux
     cd ~/
   fi
@@ -58,23 +62,44 @@ fi
 echo
 echo
 
+if ask "Install and configure Hyprland?"; then
+  HYPR=(
+    hyprland # 🪟 Hyprland & Wayland
+    hyprshot
+    waybar
+    hyprlock
+    hyprpaper
+    hyprpicker
+    wayland
+    qt5-wayland
+    qt6-wayland
+    xdg-desktop-portal-hyprland
+    spavucontrol # 🎵 Audio & Multimedia
+    pamixer
+    playerctl
+    brightnessctl # ⚙️ System Utilities
+    polkit
+    polkit-kde-agent
+  )
+  for pkg in "${HYPR[@]}"; do
+    echo "Installing: $pkg"
+    sudo pacman -S --needed --noconfirm "$pkg" || true
+  done
+fi
+
+echo
+echo
 
 if ask "Install the packages?"; then
   echo "Installing packages..."
   PACKAGES=(
-    wayland # 🛠️ Componentes Essenciais do Sistema
+     # 🛠️ Componentes Essenciais do Sistema
     sbctl
-    brightnessctl
     nvtop
     dunst
     grim
-    polkit-kde-agent
-    qt5-wayland
-    qt6-wayland
     slurp
     uwsm
-    xdg-desktop-portal-hyprland
-    polkit
     bluez
     bluez-utils
     nerd-fonts # Fonts
@@ -104,18 +129,9 @@ if ask "Install the packages?"; then
     nwg-look
     gnome-characters
     blueman
-    hyprland # hypr family
-    hyprshot
-    waybar
-    hyprlock
-    hyprpaper
-    hyprpicker
     vivaldi # 🌐 Navegadores e Comunicação
     discord
     torbrowser-launcher
-    pavucontrol # 🎵 Áudio e Multimídia
-    pamixer
-    playerctl
     btop # ⚙️ Ferramentas do Sistema (Qualidade de vida)
     fastfetch
     starship
@@ -143,7 +159,30 @@ fi
 echo
 echo
 
+if ask "Install drivers?"; then
+  DRIVERS=(
+    intel-media-driver
+    libva-intel-driver
+    libva-mesa-driver
+    mesa vulkan-intel
+    vulkan-nouveau
+    vulkan-radeon
+    xf86-video-amdgpu
+    xf86-video-ati
+    xf86-video-nouveau
+    xf86-video-vmware
+    xorg-server 
+    xorg-xinit
+  )
+  for pkg in "${DRIVERS[@]}"; do
+    echo
+    echo "Installing: $pkg"
+    sudo pacman -S --needed "$pkg" || true
+  done
+fi
 
+echo
+echo
 
 if ask "Check some systemctl services?"; then
   services=(
@@ -255,8 +294,10 @@ if ask "Proceed with graphical interface setup?"; then
   fi
 fi
 
-if ask "Start WinBoat now?"; then
+if ls ~/Downloads/WinBoat*.AppImage &>/dev/null; then
+  if ask "Start WinBoat now?"; then
     start_winboat
+  fi
 fi
 
 echo
